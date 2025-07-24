@@ -50,7 +50,7 @@
 
                 <div class="hidden md:flex flex-wrap justify-end animate__animated animate__fadeInDown">
                     <div class="group relative px-3 py-2">
-                        <a href="#" class="flex items-center text-gray-700 hover:text-primary font-medium transition-colors">
+                        <a href="{{route('userDashboard')}}" class="flex items-center text-gray-700 hover:text-primary font-medium transition-colors">
                             <i class="fas fa-home mr-2"></i> Beranda
                         </a>
                     </div>
@@ -126,8 +126,8 @@
                         </a>
                         <div class="absolute left-0 top-full hidden w-48 bg-white rounded-lg shadow-lg group-hover:block z-10 transition-all duration-300 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
                             <div class="py-2">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">Foto</a>
-                                <a href="https://www.youtube.com/channel/UC4s4UjNNJ5eO6MJrtgck2wQ" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors" target="_blank">Video</a>
+                                <a href="{{route('foto.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">Foto</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors" target="_blank">Video</a>
                             </div>
                         </div>
                     </div>
@@ -139,8 +139,8 @@
                         </a>
                         <div class="absolute right-0 top-full hidden w-48 bg-white rounded-lg shadow-lg group-hover:block z-10 transition-all duration-300 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
                             <div class="py-2">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">Kontak</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">Kritik dan Saran</a>
+                                <a href="{{route('kontak.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">Kontak</a>
+                                <a href="{{route('pengaduan.create')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">Kritik dan Saran</a>
                             </div>
                         </div>
                     </div>
@@ -177,7 +177,6 @@
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
                     <div class="hidden pl-6 py-2 space-y-1">
-                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Kurikulum Sekolah</a>
                         <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Kalender Pendidikan</a>
                         <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Tugas Siswa</a>
                         <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Buku Elektronik Siswa</a>
@@ -235,46 +234,3 @@
         </div>
     </nav>
 </header>
-<script>
-        // Simple mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Mobile dropdowns
-            const mobileDropdowns = document.querySelectorAll('.mobile-dropdown button');
-            mobileDropdowns.forEach(dropdown => {
-                dropdown.addEventListener('click', function() {
-                    const dropdownContent = this.nextElementSibling;
-                    dropdownContent.classList.toggle('hidden');
-                });
-            });
-        });
-        document.addEventListener("DOMContentLoaded", function() {
-            const scrollToTopBtn = document.querySelector(".scrollToTop");
-
-            window.addEventListener("scroll", function() {
-                if (window.scrollY > 200) {
-                    scrollToTopBtn.classList.remove("opacity-0", "translate-y-4", "invisible");
-                    scrollToTopBtn.classList.add("opacity-100", "translate-y-0", "visible");
-                } else {
-                    scrollToTopBtn.classList.remove("opacity-100", "translate-y-0", "visible");
-                    scrollToTopBtn.classList.add("opacity-0", "translate-y-4", "invisible");
-                }
-            });
-
-            scrollToTopBtn.addEventListener("click", function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            });
-        });
-    </script>
