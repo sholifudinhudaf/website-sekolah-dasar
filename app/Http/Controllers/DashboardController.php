@@ -42,7 +42,6 @@ SDN Gajahmungkur 01 berdiri pada tahun 1967 yang berada di sekitar pemukiman war
     {
         $sambutan = $this->getContent('sambutan');
         $sejarah = $this->getContent('sejarah');
-
         $pegawai = Pegawai::all();
         $siswas = Siswa::all();
         $beritas = Berita::latest()->paginate(3);

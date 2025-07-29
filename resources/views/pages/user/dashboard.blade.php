@@ -60,10 +60,10 @@
         <div class="flex flex-col md:flex-row items-center justify-center gap-8">
             <div class="flex flex-col items-center md:w-1/3">
                 <div class="relative w-64 h-64 mb-4 overflow-hidden rounded-lg shadow-md">
-                    <img alt="School principal in traditional attire" class="w-full h-full object-cover" src="https://storage.googleapis.com/a1aa/image/ey6XXTxEI5t8RqOjkQ4qIWVrOSX5UpsWRbxXuCEHzWk.jpg" />
+                    <img src="{{ asset('images/Kepala sekolah.png') }}" alt="Kepala Sekolah" class="rounded-lg shadow-lg">
                 </div>
                 <p class="text-xl font-semibold text-gray-800">
-                    Siswanto, S.Pd.
+                    Elis Dwi P., S.Pd., M.Pd
                 </p>
             </div>
             <div class="md:w-2/3 text-center md:text-left">
@@ -90,92 +90,67 @@
 </section>
 
 <!-- News Section -->
-<section class="py-16 bg-gradient-to-b from-primary to-white">
-    <div class="container max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center text-white mb-12">Berita & Kegiatan Terbaru</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:-translate-y-2 duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://sdnbandarharjo01.dikdas.semarangkota.go.id/uploads/gallery/media/WhatsApp%20Image%202024-10-21%20at%2011.22.01.jpeg"
-                        alt="Berita 1" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center text-sm text-gray-500 mb-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        21 Oktober 2024
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-800">Kegiatan Literasi Siswa Kelas 3</h3>
-                    <p class="text-gray-600 mb-4">Program literasi untuk meningkatkan minat baca siswa-siswi kelas 3
-                        dengan metode pembelajaran yang menyenangkan.</p>
-                    <a href="#" class="text-primary-600 font-medium hover:text-primary-800 inline-flex items-center transition-colors duration-300">
-                        Baca Selengkapnya
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                </div>
+    <section class="bg-gray-50 border-b py-12">
+        <div class="container max-w-6xl mx-auto px-4">
+            <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+                Berita Terkini
+            </h2>
+            <div class="w-full mb-8">
+                <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
 
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:-translate-y-2 duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://sdnbandarharjo01.dikdas.semarangkota.go.id/uploads/gallery/media/WhatsApp%20Image%202024-10-22%20at%2008.23.18.jpeg"
-                        alt="Berita 2" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center text-sm text-gray-500 mb-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        22 Oktober 2024
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @foreach ($beritas as $berita)
+                    <div
+                        class="flex flex-col h-full overflow-hidden bg-white rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <a href="{{ route('berita.show', $berita->slug) }}" class="block overflow-hidden h-48">
+                            <img src="{{ $berita->gambar ? asset('storage/' . $berita->gambar) : 'https://placehold.co/600x400?text=No+Image' }}"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                alt="{{ $berita->judul }}" />
+                        </a>
+
+                        <div class="flex-1 p-6">
+                            <div class="flex items-center mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400 mr-1"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                <p class="text-gray-500 text-sm">
+                                    {{ $berita->created_at->format('d M Y') }}
+                                </p>
+                            </div>
+
+                            <h3 class="font-bold text-xl text-gray-800 mb-3 line-clamp-2 hover:text-pink-500">
+                                <a href="{{ route('berita.show', $berita->slug) }}">{{ $berita->judul }}</a>
+                            </h3>
+
+                            <p class="text-gray-600 text-base mb-4 line-clamp-3">
+                                {{ Str::limit(strip_tags($berita->isi), 100) }}
+                            </p>
+
+                        </div>
+
+                        <div class="px-6 pb-4">
+                            <a class="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm font-medium"
+                                href="{{ route('berita.show', $berita->slug) }}">
+                                Baca selengkapnya
+                            </a>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-800">Lomba Cerdas Cermat Tingkat Kecamatan</h3>
-                    <p class="text-gray-600 mb-4">Siswa-siswi SD Negeri Bandarharjo 01 berhasil meraih juara 2 dalam
-                        Lomba Cerdas Cermat tingkat kecamatan.</p>
-                    <a href="#" class="text-primary-600 font-medium hover:text-primary-800 inline-flex items-center transition-colors duration-300">
-                        Baca Selengkapnya
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                </div>
+                @endforeach
             </div>
 
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:-translate-y-2 duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://admlapor.semarangkota.go.id/storage/file/02112025084415-HtqK9ikF.jpeg"
-                        alt="Berita 3" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center text-sm text-gray-500 mb-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        1 November 2024
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-800">Upacara Bendera Peringatan Hari Pahlawan</h3>
-                    <p class="text-gray-600 mb-4">Sekolah mengadakan upacara bendera untuk memperingati Hari
-                        Pahlawan dan menanamkan jiwa nasionalisme pada siswa.</p>
-                    <a href="#" class="text-primary-600 font-medium hover:text-primary-800 inline-flex items-center transition-colors duration-300">
-                        Baca Selengkapnya
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                </div>
+            <div class="flex justify-center mt-12">
+                <a href="{{ route('berita.index') }}">
+                    <button
+                        class="mx-auto lg:mx-0 bg-blue-600 text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:bg-blue-700 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                        Lihat Semua Berita
+                    </button>
+                </a>
             </div>
         </div>
-        <div class="text-center mt-12">
-            <a href="#" class="bg-white text-primary-600 hover:bg-gray-100 px-6 py-3 rounded-lg inline-flex items-center font-medium transition-colors duration-300 shadow-md">
-                Lihat Semua Berita
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 
 <!-- Related Links Section -->
 <section class="py-16 bg-gray-50 ">

@@ -3,14 +3,14 @@
         style="background-attachment: fixed">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <div class="absolute inset-0 bg-gradient-to-r from-[#d53369] to-[#daae51]/25"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-300/25"></div>
         </div>
 
         <!-- Hero Content -->
         <div class="container mx-auto px-6 relative z-10 h-full flex justify-center items-center">
             <div class="max-w-3xl text-center">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Galeri Foto</h1>
-                <p class="text-xl md:text-2xl text-white">SDN GAJAHMUNGKUR 01</p>
+                <p class="text-xl md:text-2xl text-white">SDN BANDARHARJO 02</p>
             </div>
         </div>
 
@@ -26,7 +26,7 @@
             <!-- Header with improved typography and spacing -->
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">Album Foto</h2>
-                <div class="h-1 mx-auto bg-gradient-to-r from-[#d53369] to-[#daae51] w-24 md:w-32 lg:w-40 my-4 rounded"></div>
+                <div class="h-1 mx-auto bg-gradient-to-r from-blue-600 to-blue-300 w-24 md:w-32 lg:w-40 my-4 rounded"></div>
                 <p class="text-gray-600 max-w-2xl mx-auto">Koleksi kenangan dalam gambar yang berharga</p>
             </div>
 

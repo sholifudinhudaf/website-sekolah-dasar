@@ -35,7 +35,7 @@
             <div class="flex justify-between items-center py-2">
                 <div class="flex items-center animate__animated animate__zoomIn animate__delay-0.5s">
                     <div class="min-w-[64px] min-h-[64px] mr-2 bg-primary bg-opacity-10 rounded-lg flex    items-center justify-center">
-                        <img src="{{ asset('favicon.png') }}" alt="Logo SDN Semarang" class="h-16 w-16 object-contain">
+                        <img src="{{ asset('images/logosd.png') }}" alt="Logo SDN Semarang" class="h-16 w-16 object-contain">
                     </div>
                     <div>
                         <div class="text-xl font-bold text-primary">SDN Semarang</div>
@@ -65,27 +65,8 @@
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">Visi Misi Sekolah</a>
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">Sejarah Singkat Sekolah</a>
                                 <a href="https://referensi.data.kemdikbud.go.id/tabs.php?npsn=203293" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">NPSN</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">Pendidikan dan Tenaga Kependidikan</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Peserta Didik</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Prestasi Sekolah</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">Ekstrakurikuler</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">BOS (Bantuan Operasional Sekolah)</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="group relative px-3 py-2">
-                        <a href="#" class="flex items-center text-gray-700 hover:text-primary font-medium transition-colors">
-                            <i class="fas fa-book mr-2"></i> Kurikulum
-                            <i class="fas fa-chevron-down ml-2 text-xs"></i>
-                        </a>
-                        <div class="absolute left-0 top-full hidden w-64 bg-white rounded-lg shadow-lg group-hover:block z-10 transition-all duration-300 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
-                            <div class="py-2">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Kurikulum Sekolah</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Kalender Pendidikan</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Tugas Siswa</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Buku Elektronik Siswa</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Video Pembelajaran YouTube</a>
+                                <a href="/pegawai" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">Pendidikan dan Tenaga Kependidikan</a>
+                                <a href="/siswa" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Peserta Didik</a>
                             </div>
                         </div>
                     </div>
@@ -97,24 +78,8 @@
                         </a>
                         <div class="absolute left-0 top-full hidden w-64 bg-white rounded-lg shadow-lg group-hover:block z-10 transition-all duration-300 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
                             <div class="py-2">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Berita Sekolah</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Pendaftaran Siswa Baru</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="group relative px-3 py-2">
-                        <a href="#" class="flex items-center text-gray-700 hover:text-primary font-medium transition-colors">
-                            <i class="fas fa-trophy mr-2"></i> Lomba
-                            <i class="fas fa-chevron-down ml-2 text-xs"></i>
-                        </a>
-                        <div class="absolute left-0 top-full hidden w-64 bg-white rounded-lg shadow-lg group-hover:block z-10 transition-all duration-300 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
-                            <div class="py-2">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Lomba Membuat Tulisan Motivasi/Inspiratif 2021</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Lomba Bahasa Jawa 2021</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">MAPSI 2021</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">FLS2N</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">KSN</a>
+                                <a href="/pengumuman" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Pengumuman</a>
+                                <a href="/berita" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white rounded-md mx-2 my-1 transition-colors">Berita Sekolah</a>
                             </div>
                         </div>
                     </div>
@@ -127,7 +92,7 @@
                         <div class="absolute left-0 top-full hidden w-48 bg-white rounded-lg shadow-lg group-hover:block z-10 transition-all duration-300 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
                             <div class="py-2">
                                 <a href="{{route('foto.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors">Foto</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors" target="_blank">Video</a>
+                                <a href="https://www.youtube.com/@sdnbandarharjo0154" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white rounded-md mx-2 my-1 transition-colors" target="_blank">Video</a>
                             </div>
                         </div>
                     </div>

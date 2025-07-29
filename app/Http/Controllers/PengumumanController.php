@@ -7,14 +7,46 @@ use Illuminate\Http\Request;
 
 class PengumumanController extends Controller
 {
-    // Tampilkan semua pengumuman
-    public function index()
+    // ===================== USER ========================= //
+
+    // Tampilkan semua pengumuman untuk user
+    public function index(Request $request)
+    {
+        $sort = $request->get('sort', 'latest');
+
+        $query = Pengumuman::query();
+
+        if ($sort === 'oldest') {
+            $query->orderBy('created_at', 'asc');
+        } else {
+            $query->orderBy('created_at', 'desc');
+        }
+
+        $pengumumen = $query->paginate(6);
+
+        return view('pages.user.pengumuman', compact('pengumumen'));
+    }
+
+
+    // Tampilkan detail pengumuman
+    public function show($id)
+    {
+        $pengumuman = Pengumuman::findOrFail($id);
+        $pengumumanTerbaru = Pengumuman::latest()->limit(5)->get();
+
+        return view('pages.admin.pengumuman.show-pengumuman', compact('pengumuman', 'pengumumanTerbaru'));
+    }
+
+    // ===================== ADMIN ========================= //
+
+    // List semua pengumuman untuk admin
+    public function adminIndex()
     {
         $pengumuman = Pengumuman::latest()->paginate(10);
         return view('pages.admin.pengumuman.index', compact('pengumuman'));
     }
 
-    // Tampilkan form tambah pengumuman
+    // Form tambah pengumuman
     public function create()
     {
         return view('pages.admin.pengumuman.create');
@@ -28,26 +60,22 @@ class PengumumanController extends Controller
             'isi' => 'required|string',
         ]);
 
-        Pengumuman::create($request->only('judul', 'isi'));
+        Pengumuman::create([
+            'judul' => $request->judul,
+            'isi' => $request->isi,
+        ]);
 
-        return redirect()->route('pengumuman.index')->with('success', 'Pengumuman berhasil ditambahkan.');
+        return redirect()->route('pengumuman.page')->with('success', 'Pengumuman berhasil ditambahkan.');
     }
 
-    // Tampilkan detail pengumuman (opsional)
-    public function show($id)
-    {
-        $pengumuman = Pengumuman::findOrFail($id);
-        return view('pages.admin.pengumuman.show', compact('pengumuman'));
-    }
-
-    // Tampilkan form edit
+    // Form edit pengumuman
     public function edit($id)
     {
         $pengumuman = Pengumuman::findOrFail($id);
-        return view('pages.admin.pengumuman.edit', compact('pengumuman'));
+        return view('pages/admin/pengumuman/edit-pengumuman', compact('pengumuman'));
     }
 
-    // Update data
+    // Simpan update pengumuman
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -56,17 +84,31 @@ class PengumumanController extends Controller
         ]);
 
         $pengumuman = Pengumuman::findOrFail($id);
-        $pengumuman->update($request->only('judul', 'isi'));
+        $pengumuman->update([
+            'judul' => $request->judul,
+            'isi' => $request->isi,
+        ]);
 
-        return redirect()->route('pengumuman.index')->with('success', 'Pengumuman berhasil diperbarui.');
+        return redirect()->route('pengumuman.page')->with('success', 'Pengumuman berhasil diupdate.');
     }
 
-    // Hapus data
+    // Hapus pengumuman
     public function destroy($id)
     {
         $pengumuman = Pengumuman::findOrFail($id);
         $pengumuman->delete();
 
-        return redirect()->route('pengumuman.index')->with('success', 'Pengumuman berhasil dihapus.');
+        return redirect()->route('pengumuman.page')->with('success', 'Pengumuman berhasil dihapus.');
     }
+
+    // Detail pengumuman untuk user// Tampilkan detail pengumuman untuk USER
+    public function showUser($id)
+    {
+        $pengumuman = Pengumuman::findOrFail($id);
+        $pengumumanTerbaru = Pengumuman::latest()->limit(5)->get();
+
+        return view('pages.user.show-pengumuman', compact('pengumuman', 'pengumumanTerbaru'));
+    }
+
+
 }

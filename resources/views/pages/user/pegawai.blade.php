@@ -4,14 +4,14 @@
         style="background-attachment: fixed">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <div class="absolute inset-0 bg-gradient-to-r from-[#d53369] to-[#daae51]/25"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-300/25"></div>
         </div>
 
         <!-- Hero Content -->
         <div class="container mx-auto px-6 relative z-10 h-full flex justify-center items-center">
             <div class="max-w-3xl text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Guru dan Staff</h1>
-                <p class="text-xl md:text-2xl text-white">SDN GAJAHMUNGKUR 01</p>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Pendidik dan Tenaga kependidikan</h1>
+                <p class="text-xl md:text-2xl text-white">SDN BANDARHARJO 01</p>
             </div>
         </div>
 

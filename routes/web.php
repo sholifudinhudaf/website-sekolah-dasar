@@ -6,10 +6,16 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\PengumumanController;
+use App\Models\Pengumuman;
 
 // Halaman user
 Route::get('/', [DashboardController::class, 'index'])->name('userDashboard');
 Route::get('/profil', [DashboardController::class, 'profil'])->name('userProfil');
+
+// Halaman pengumuman
+Route::get('/pengumuman', [PengumumanController::class, 'index'])->name('pengumuman.index');
+Route::get('/pengumuman/{id}', [PengumumanController::class, 'show'])->name('pengumuman.show');
 
 // Halaman berita
 Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
@@ -21,7 +27,6 @@ Route::get('/siswa/{id}', [SiswaController::class, 'show'])->name('siswa.show');
 
 // Halaman sejarah
 Route::get('/siswa', [DashboardController::class, 'siswa'])->name('siswa.index');
-
 
 // Halaman pegawai
 Route::get('/pegawai', [DashboardController::class, 'pegawai'])->name('pegawai.index');
@@ -45,3 +50,7 @@ Route::get('/pengaduan', function () {
 
 // Route untuk menyimpan pengaduan dari form user
 Route::post('/pengaduan', [PengaduanController::class, 'store'])->name('pengaduan.store');
+
+// Untuk halaman detail pengumuman versi USER
+Route::get('/pengumuman/{id}', [PengumumanController::class, 'showUser'])->name('pengumuman.user.show');
+

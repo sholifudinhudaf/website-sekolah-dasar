@@ -26,6 +26,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
   Route::get('/berita', [AdminController::class, 'beritaPage'])->name('berita.page');
   Route::get('/berita/add', [AdminController::class, 'beritaAdd'])->name('berita.add');
 
+  Route::get('/pengumuman', [AdminController::class, 'pengumumanPage'])->name('pengumuman.page');
+  Route::get('/pengumuman/add', [AdminController::class, 'pengumumanAdd'])->name('pengumuman.add');
+
   Route::get('/pengaduan', [AdminController::class, 'pengaduanPage'])->name('pengaduan.page');
 
   // CRUD

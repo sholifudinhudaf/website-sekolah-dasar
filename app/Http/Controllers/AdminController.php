@@ -8,6 +8,7 @@ use App\Models\Berita;
 use App\Models\Pegawai;
 use App\Models\Pengaduan;
 use App\Models\Siswa;
+use App\Models\Pengumuman;
 
 class AdminController extends Controller
 {
@@ -84,10 +85,25 @@ public function index()
         return view('pages/admin/berita/add-berita', compact('berita'));
     }
 
+    // Pengumuman
+    public function pengumumanPage()
+    {
+        $pengumuman = Pengumuman::latest()->get();
+        return view('pages/admin/pengumuman/show-all-pengumuman', compact('pengumuman'));
+    }
+
+    public function pengumumanAdd()
+    {
+        $pengumuman = Pengumuman::all();
+        return view('pages/admin/pengumuman/add-pengumuman', compact('pengumuman'));
+    }
+
     // Pengaduan
     public function pengaduanPage()
     {
         $pengaduan = Pengaduan::latest()->get();
         return view('pages/admin/pengaduan/show-pengaduan', compact('pengaduan'));
     }
+
+
 }
